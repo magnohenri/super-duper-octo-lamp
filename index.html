@@ -4,39 +4,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Produtos</title>
+    <title>Lista de Produtos 🌿</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
-            margin: 20px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 20px;
-        }
-        th, td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: left;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-        tr:nth-child(even) {
-            background-color: #f9f9f9;
-        }
-        tr:hover {
-            background-color: #f1f1f1;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+            color: #333;
+            margin: 0;
+            padding: 20px;
         }
         h1, h2 {
-            color: #333;
+            text-align: center;
+            color: #2e7d32;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        h2 {
+            font-size: 1.8em;
+            margin-top: 30px;
         }
         .jamaica-flag {
             display: flex;
-            align-items: center;
             justify-content: center;
+            align-items: center;
+            gap: 10px;
             margin: 20px 0;
         }
         .jamaica-flag div {
@@ -46,10 +39,58 @@
         .black { background-color: black; }
         .gold { background-color: gold; }
         .green { background-color: green; }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #4caf50;
+            color: white;
+            font-size: 1.1em;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:hover {
+            background-color: #e8f5e9;
+        }
+        td {
+            font-size: 1em;
+            color: #555;
+        }
+        .emoji {
+            font-size: 1.2em;
+            margin-right: 5px;
+        }
+        .info {
+            background-color: #fff3e0;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .info p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            color: #333;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 0.9em;
+            color: #777;
+        }
     </style>
 </head>
 <body>
-    <h1>Lista de Produtos - Atualizada em 08/Fevereiro/2025</h1>
+    <h1>🌿 Lista de Produtos - Atualizada em 08/Fevereiro/2025 🌿</h1>
 
     <div class="jamaica-flag">
         <div class="black"></div>
@@ -57,201 +98,106 @@
         <div class="green"></div>
     </div>
 
-    <h2>Informações Gerais</h2>
-    <p>Pedido mínimo: R$50 | Horários de saída: 16h, 19h e 21h30.</p>
-    <p>Taxas de entrega variam entre R$5 e R$50 dependendo da localização.</p>
+    <div class="info">
+        <p><span class="emoji">📍</span> <strong>Endereço:</strong> Informe seu endereço ao fazer o pedido.</p>
+        <p><span class="emoji">⏰</span> <strong>Horários de Saída:</strong> 16h, 19h e 21h30.</p>
+        <p><span class="emoji">💰</span> <strong>Pedido Mínimo:</strong> R$50.</p>
+        <p><span class="emoji">🚚</span> <strong>Taxas de Entrega:</strong> Variam entre R$5 e R$50 dependendo da localização.</p>
+    </div>
 
-    <h2>Produtos Disponíveis</h2>
+    <h2>📦 Produtos Disponíveis 🌟</h2>
     <table>
         <thead>
             <tr>
-                <th>Produto</th>
-                <th>Descrição</th>
-                <th>Preço</th>
+                <th>Produto 🛍️</th>
+                <th>Descrição 📝</th>
+                <th>Preço 💵</th>
             </tr>
         </thead>
         <tbody>
             <!-- Canetas POD THC -->
             <tr>
-                <td>Caneta POD THC 2ML</td>
+                <td><span class="emoji">🖊️</span> Caneta POD THC 2ML</td>
                 <td>Marca TRE HOUSE, sabores: Forbidden Fruit, Lime Sorbet, Sour Tangie, Candy Land.</td>
                 <td>R$400 (1 unidade), R$760 (2 unidades), R$1.750 (5 unidades), R$3.200 (10 unidades).</td>
             </tr>
             <!-- Flores Californianas -->
             <tr>
-                <td>Flores Californianas</td>
+                <td><span class="emoji">💐</span> Flores Californianas</td>
                 <td>Violet Zkittlez, Super Critical, Pink Crumble, Radical Juice.</td>
                 <td>R$70 (1g), R$68 (a partir de 2g), R$65 (a partir de 5g), R$60 (a partir de 10g), R$59 (a partir de 15g), R$58 (a partir de 20g), R$55 (a partir de 30g), R$50 (a partir de 50g).</td>
             </tr>
             <!-- Flor Resinada OG Kush -->
             <tr>
-                <td>Flor Resinada OG Kush</td>
+                <td><span class="emoji">🌳</span> Flor Resinada OG Kush</td>
                 <td>Resina premium, ideal para uso recreativo.</td>
                 <td>R$55 (1g), R$50 (a partir de 2g), R$49 (a partir de 10g), R$45 (a partir de 20g), R$40 (a partir de 30g), R$39 (a partir de 50g), R$35 (a partir de 100g).</td>
             </tr>
             <!-- Wax Branco -->
             <tr>
-                <td>Wax Branco</td>
+                <td><span class="emoji">🍯</span> Wax Branco</td>
                 <td>Soco na mente, já vem no Slik de silicone.</td>
                 <td>R$155 (1g), R$150 (a partir de 2g), R$140 (a partir de 5g), R$135 (a partir de 10g).</td>
             </tr>
             <!-- Meleca Laranja -->
             <tr>
-                <td>Meleca Laranja</td>
+                <td><span class="emoji">🐝</span> Meleca Laranja</td>
                 <td>Textura única, já vem no Slik de silicone.</td>
                 <td>R$145 (1g), R$135 (a partir de 2g), R$130 (a partir de 5g), R$120 (a partir de 10g).</td>
             </tr>
             <!-- Ice Melt -->
             <tr>
-                <td>Ice Melt</td>
+                <td><span class="emoji">🧊</span> Ice Melt</td>
                 <td>Produto cristalino de alta qualidade.</td>
                 <td>R$95 (1g), R$90 (a partir de 5g), R$80 (a partir de 10g).</td>
             </tr>
             <!-- Dry Critical -->
             <tr>
-                <td>Dry Critical</td>
+                <td><span class="emoji">🍫</span> Dry Critical</td>
                 <td>Cremoso e fortão, original.</td>
                 <td>R$65 (1g).</td>
             </tr>
             <!-- Atracou Dry Kush Lemon -->
             <tr>
-                <td>Atracou Dry Kush Lemon</td>
+                <td><span class="emoji">🍋</span> Atracou Dry Kush Lemon</td>
                 <td>Original, disponível em várias quantidades.</td>
                 <td>R$65 (1g), R$55 (a partir de 2g), R$52 (a partir de 5g), R$50 (a partir de 10g), R$48 (a partir de 20g), R$45 (a partir de 50g), R$3.800 (placa).</td>
-            </tr>
-            <!-- Skunk Colômbia Gold -->
-            <tr>
-                <td>Skunk Colômbia Gold</td>
-                <td>Escurinho e fofinho, muito forte.</td>
-                <td>R$30 (1g), R$24 (a partir de 5g), R$22 (a partir de 10g), R$20 (a partir de 20g), R$19 (a partir de 30g), R$18 (a partir de 50g), R$16 (a partir de 100g).</td>
-            </tr>
-            <!-- Maconha Prensada -->
-            <tr>
-                <td>Maconha Prensada</td>
-                <td>Massona chocolate, top qualidade.</td>
-                <td>R$100 (35g), R$200 (90g), R$300 (150g), R$800 (500g), R$1.450 (1kg).</td>
-            </tr>
-            <!-- Cristal MD -->
-            <tr>
-                <td>Cristal MD</td>
-                <td>O puro top, ideal para uso recreativo.</td>
-                <td>R$110 (1g), R$100 (a partir de 5g).</td>
-            </tr>
-            <!-- LSD TZ Laboratórios -->
-            <tr>
-                <td>LSD TZ Laboratórios</td>
-                <td>300ug, Needlepoint Crystal.</td>
-                <td>R$35 (1 doce), R$150 (5 doces), R$270 (10 doces).</td>
-            </tr>
-            <!-- STAR -->
-            <tr>
-                <td>STAR</td>
-                <td>Micro pontos 200ug, verde e amarelo.</td>
-                <td>R$30 (1 estrela), R$140 (5 estrelas), R$250 (10 estrelas).</td>
-            </tr>
-            <!-- Mentos Três Cores -->
-            <tr>
-                <td>Mentos Três Cores</td>
-                <td>400mg + MDMA.</td>
-                <td>R$35 (1 bala), R$70 (2 balas), R$125 (5 balas), R$200 (10 balas), R$380 (20 balas), R$850 (50 balas), R$1.400 (100 balas), R$2.400 (200 balas).</td>
-            </tr>
-            <!-- Abacaxi -->
-            <tr>
-                <td>Abacaxi</td>
-                <td>300mg MDMA + MDA.</td>
-                <td>R$30 (1 bala), R$60 (2 balas), R$100 (5 balas), R$180 (10 balas), R$340 (20 balas), R$700 (50 balas), R$1.100 (100 balas), R$2.000 (200 balas).</td>
-            </tr>
-            <!-- Pablo Escobar -->
-            <tr>
-                <td>Pablo Escobar</td>
-                <td>180mg MDMA + MDA.</td>
-                <td>R$35 (2 balas), R$80 (5 balas), R$150 (10 balas), R$290 (20 balas), R$550 (50 balas), R$900 (100 balas), R$1.400 (200 balas).</td>
             </tr>
         </tbody>
     </table>
 
-    <h2>Acessórios</h2>
+    <h2>🛠️ Acessórios 🛠️</h2>
     <table>
         <thead>
             <tr>
-                <th>Produto</th>
-                <th>Descrição</th>
-                <th>Preço</th>
+                <th>Produto 🛠️</th>
+                <th>Descrição 📝</th>
+                <th>Preço 💵</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td>Bic Pequeno Original</td>
+                <td><span class="emoji">🔥</span> Bic Pequeno Original</td>
                 <td>Isqueiro compacto.</td>
                 <td>R$5 cada.</td>
             </tr>
             <tr>
-                <td>Piteira de Silicone</td>
-                <td>6mm, durável e reutilizável.</td>
-                <td>R$5 cada.</td>
-            </tr>
-            <tr>
-                <td>Cuia Pequena</td>
-                <td>Ideal para transporte.</td>
-                <td>R$10 cada.</td>
-            </tr>
-            <tr>
-                <td>Cuia Grande</td>
-                <td>Maior capacidade.</td>
-                <td>R$15 cada.</td>
-            </tr>
-            <tr>
-                <td>Kit para Fumar Meleca</td>
-                <td>Disponível nas cores azul e amarela.</td>
-                <td>R$65 cada.</td>
-            </tr>
-            <tr>
-                <td>Maçarico Portátil</td>
-                <td>Recarregável com trava (sem gás).</td>
-                <td>R$35 cada.</td>
-            </tr>
-            <tr>
-                <td>Case Pequeno Redondo</td>
-                <td>Para guardar acessórios.</td>
-                <td>R$15 cada.</td>
-            </tr>
-            <tr>
-                <td>Bolador</td>
-                <td>Ferramenta prática.</td>
-                <td>R$20 cada.</td>
-            </tr>
-            <tr>
-                <td>Seda Raw Organic</td>
-                <td>King Size Slim.</td>
-                <td>R$10 cada.</td>
-            </tr>
-            <tr>
-                <td>Seda Elements</td>
-                <td>Slim King Size Azul Premium.</td>
-                <td>R$10 cada.</td>
-            </tr>
-            <tr>
-                <td>Seda Zomo Natural Perfect</td>
-                <td>Marrom, 1 por R$5 ou 3 por R$10.</td>
-                <td>R$5/R$10.</td>
-            </tr>
-            <tr>
-                <td>Tesoura Dobrável</td>
+                <td><span class="emoji">✂️</span> Tesoura Dobrável</td>
                 <td>Reforçada, disponível nas cores azul e preta.</td>
                 <td>R$20 cada.</td>
             </tr>
             <tr>
-                <td>Tesoura Simples</td>
-                <td>Compacta e funcional.</td>
+                <td><span class="emoji">📜</span> Seda Raw Organic</td>
+                <td>King Size Slim.</td>
                 <td>R$10 cada.</td>
-            </tr>
-            <tr>
-                <td>Piteira de Algodão</td>
-                <td>Pacote com 150 unidades.</td>
-                <td>R$20 cada.</td>
             </tr>
         </tbody>
     </table>
+
+    <div class="footer">
+        <p>⚠️ Não compartilhe este contato! Indique e nós chamamos a pessoa! 🙏</p>
+        <p>✅ Obrigado pela preferência! Boas compras! 🌟</p>
+    </div>
 </body>
 </html>
 ```
