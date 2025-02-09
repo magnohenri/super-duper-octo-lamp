@@ -1,74 +1,54 @@
-
-                        <!DOCTYPE html>
-                        <html lang="en">
-                        <head>
-                            <meta charset="UTF-8">
-                            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-							<style>
-								body {
-									background-color: white; /* Ensure the iframe has a white background */
-								}
-
-								
-							</style>
-                        </head>
-                        <body>
-                            <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catálogo de Produtos 🌿</title>
+    <title>Catálogo com Canvas Animado 🌿</title>
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f5f7fa;
-            color: #333;
             margin: 0;
-            padding: 10px;
+            overflow: hidden;
+            background-color: #000;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: white;
         }
-        h1, h2 {
+        canvas {
+            display: block;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+        .container {
+            position: relative;
+            z-index: 10;
+            padding: 20px;
+            max-width: 600px;
+            margin: 0 auto;
             text-align: center;
-            color: #2e7d32;
-            margin: 15px 0;
         }
         h1 {
-            font-size: 1.8em;
+            font-size: 2em;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
         }
-        h2 {
-            font-size: 1.4em;
-        }
-        .jamaica-flag {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 5px;
-            margin: 10px 0;
-        }
-        .jamaica-flag div {
-            width: 30px;
-            height: 30px;
-        }
-        .black { background-color: black; }
-        .gold { background-color: gold; }
-        .green { background-color: green; }
         .info {
-            background-color: #fff3e0;
-            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 15px;
             border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            margin-bottom: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
         }
         .info p {
             font-size: 1em;
             line-height: 1.4;
-            color: #333;
+            color: white;
         }
         .product-card {
-            background-color: #ffffff;
-            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 15px;
             border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
             margin-bottom: 15px;
         }
         .product-card h3 {
@@ -78,8 +58,7 @@
         }
         .product-card p {
             font-size: 0.9em;
-            color: #555;
-            margin: 0 0 5px;
+            color: white;
         }
         table {
             width: 100%;
@@ -89,18 +68,17 @@
         th, td {
             padding: 8px;
             text-align: left;
-            border: 1px solid #ddd;
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
         th {
-            background-color: #4caf50;
+            background-color: rgba(255, 255, 255, 0.1);
             color: white;
-            font-size: 1em;
         }
         tr:nth-child(even) {
-            background-color: #f9f9f9;
+            background-color: rgba(255, 255, 255, 0.05);
         }
         tr:hover {
-            background-color: #e8f5e9;
+            background-color: rgba(255, 255, 255, 0.2);
         }
         .emoji {
             font-size: 1.2em;
@@ -110,320 +88,183 @@
             text-align: center;
             margin-top: 20px;
             font-size: 0.8em;
-            color: #777;
+            color: rgba(255, 255, 255, 0.7);
         }
     </style>
 </head>
 <body>
-    <h1>🌿 Catálogo de Produtos - Atualizado em 08/Fevereiro/2025 🌿</h1>
+    <canvas id="canvas"></canvas>
 
-    <div class="jamaica-flag">
-        <div class="black"></div>
-        <div class="gold"></div>
-        <div class="green"></div>
-    </div>
+    <div class="container">
+        <h1>🌿 Catálogo de Produtos - Atualizado em 08/Fevereiro/2025 🌿</h1>
 
-    <div class="info">
-        <p><span class="emoji">📍</span> Informe seu endereço ao fazer o pedido.</p>
-        <p><span class="emoji">⏰</span> Horários de Saída: 16h, 19h e 21h30.</p>
-        <p><span class="emoji">💰</span> Pedido Mínimo: R$50.</p>
-        <p><span class="emoji">🚚</span> Taxas de Entrega: Variam entre R$5 e R$50 dependendo da localização.</p>
-    </div>
+        <div class="info">
+            <p><span class="emoji">📍</span> Informe seu endereço ao fazer o pedido.</p>
+            <p><span class="emoji">⏰</span> Horários de Saída: 16h, 19h e 21h30.</p>
+            <p><span class="emoji">💰</span> Pedido Mínimo: R$50.</p>
+            <p><span class="emoji">🚚</span> Taxas de Entrega: Variam entre R$5 e R$50 dependendo da localização.</p>
+        </div>
 
-    <h2>📦 Canetas POD THC 🖊️</h2>
-    <div class="product-card">
-        <h3><span class="emoji">🖊️</span> Caneta POD THC 2ML</h3>
-        <p>Marca TRE HOUSE, sabores: Forbidden Fruit, Lime Sorbet, Sour Tangie, Candy Land.</p>
-        <table>
-            <thead>
-                <tr>
-                    <th>Quantidade</th>
-                    <th>Preço</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1 unidade</td>
-                    <td>R$400</td>
-                </tr>
-                <tr>
-                    <td>2 unidades</td>
-                    <td>R$760</td>
-                </tr>
-                <tr>
-                    <td>5 unidades</td>
-                    <td>R$1.750</td>
-                </tr>
-                <tr>
-                    <td>10 unidades</td>
-                    <td>R$3.200</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+        <h2>📦 Canetas POD THC 🖊️</h2>
+        <div class="product-card">
+            <h3><span class="emoji">🖊️</span> Caneta POD THC 2ML</h3>
+            <p>Marca TRE HOUSE, sabores: Forbidden Fruit, Lime Sorbet, Sour Tangie, Candy Land.</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Quantidade</th>
+                        <th>Preço</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1 unidade</td>
+                        <td>R$400</td>
+                    </tr>
+                    <tr>
+                        <td>2 unidades</td>
+                        <td>R$760</td>
+                    </tr>
+                    <tr>
+                        <td>5 unidades</td>
+                        <td>R$1.750</td>
+                    </tr>
+                    <tr>
+                        <td>10 unidades</td>
+                        <td>R$3.200</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
-    <h2>💐 Flores Californianas 🌸</h2>
-    <div class="product-card">
-        <h3><span class="emoji">💐</span> Violet Zkittlez</h3>
-        <p>Flores cristalinas e cheirosas.</p>
-        <table>
-            <thead>
-                <tr>
-                    <th>Quantidade</th>
-                    <th>Preço</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1g</td>
-                    <td>R$70</td>
-                </tr>
-                <tr>
-                    <td>2g</td>
-                    <td>R$68</td>
-                </tr>
-                <tr>
-                    <td>5g</td>
-                    <td>R$65</td>
-                </tr>
-                <tr>
-                    <td>10g</td>
-                    <td>R$60</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    <div class="product-card">
-        <h3><span class="emoji">🪻</span> Super Critical</h3>
-        <p>Cremosa e potente.</p>
-        <table>
-            <thead>
-                <tr>
-                    <th>Quantidade</th>
-                    <th>Preço</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1g</td>
-                    <td>R$70</td>
-                </tr>
-                <tr>
-                    <td>2g</td>
-                    <td>R$68</td>
-                </tr>
-                <tr>
-                    <td>5g</td>
-                    <td>R$65</td>
-                </tr>
-                <tr>
-                    <td>10g</td>
-                    <td>R$60</td>
-                </tr>
-            </tbody>
-        </table>
+        <h2>💐 Flores Californianas 🌸</h2>
+        <div class="product-card">
+            <h3><span class="emoji">💐</span> Violet Zkittlez</h3>
+            <p>Flores cristalinas e cheirosas.</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Quantidade</th>
+                        <th>Preço</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1g</td>
+                        <td>R$70</td>
+                    </tr>
+                    <tr>
+                        <td>2g</td>
+                        <td>R$68</td>
+                    </tr>
+                    <tr>
+                        <td>5g</td>
+                        <td>R$65</td>
+                    </tr>
+                    <tr>
+                        <td>10g</td>
+                        <td>R$60</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="footer">
+            <p>⚠️ Não compartilhe este contato! Indique e nós chamamos a pessoa! 🙏</p>
+            <p>✅ Obrigado pela preferência! Boas compras! 🌟</p>
+        </div>
     </div>
 
-    <h2>🌳 Flor Resinada OG Kush 🌳</h2>
-    <div class="product-card">
-        <h3><span class="emoji">🌳</span> OG Kush</h3>
-        <p>Resina premium, ideal para uso recreativo.</p>
-        <table>
-            <thead>
-                <tr>
-                    <th>Quantidade</th>
-                    <th>Preço</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1g</td>
-                    <td>R$55</td>
-                </tr>
-                <tr>
-                    <td>2g</td>
-                    <td>R$50</td>
-                </tr>
-                <tr>
-                    <td>10g</td>
-                    <td>R$49</td>
-                </tr>
-                <tr>
-                    <td>20g</td>
-                    <td>R$45</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+    <script>
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
 
-    <h2>🍯 Wax Branco e Meleca Laranja 🍯</h2>
-    <div class="product-card">
-        <h3><span class="emoji">🍯</span> Wax Branco</h3>
-        <p>Soco na mente, já vem no Slik de silicone.</p>
-        <table>
-            <thead>
-                <tr>
-                    <th>Quantidade</th>
-                    <th>Preço</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1g</td>
-                    <td>R$155</td>
-                </tr>
-                <tr>
-                    <td>2g</td>
-                    <td>R$150</td>
-                </tr>
-                <tr>
-                    <td>5g</td>
-                    <td>R$140</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    <div class="product-card">
-        <h3><span class="emoji">🐝</span> Meleca Laranja</h3>
-        <p>Textura única, já vem no Slik de silicone.</p>
-        <table>
-            <thead>
-                <tr>
-                    <th>Quantidade</th>
-                    <th>Preço</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1g</td>
-                    <td>R$145</td>
-                </tr>
-                <tr>
-                    <td>2g</td>
-                    <td>R$135</td>
-                </tr>
-                <tr>
-                    <td>5g</td>
-                    <td>R$130</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+        // Configuração inicial do canvas
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
 
-    <h2>🍫 Dry Critical e Atracou Dry Kush Lemon 🍫</h2>
-    <div class="product-card">
-        <h3><span class="emoji">🍫</span> Dry Critical</h3>
-        <p>Cremoso e fortão, original.</p>
-        <table>
-            <thead>
-                <tr>
-                    <th>Quantidade</th>
-                    <th>Preço</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1g</td>
-                    <td>R$65</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    <div class="product-card">
-        <h3><span class="emoji">🍋</span> Atracou Dry Kush Lemon</h3>
-        <p>Original, disponível em várias quantidades.</p>
-        <table>
-            <thead>
-                <tr>
-                    <th>Quantidade</th>
-                    <th>Preço</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1g</td>
-                    <td>R$65</td>
-                </tr>
-                <tr>
-                    <td>2g</td>
-                    <td>R$55</td>
-                </tr>
-                <tr>
-                    <td>5g</td>
-                    <td>R$52</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+        // Função para ajustar o tamanho do canvas ao redimensionar a janela
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            init();
+        });
 
-    <h2>🛠️ Acessórios 🛠️</h2>
-    <div class="product-card">
-        <h3><span class="emoji">🔥</span> Bic Pequeno Original</h3>
-        <p>Isqueiro compacto.</p>
-        <table>
-            <thead>
-                <tr>
-                    <th>Quantidade</th>
-                    <th>Preço</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1 unidade</td>
-                    <td>R$5</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    <div class="product-card">
-        <h3><span class="emoji">✂️</span> Tesoura Dobrável</h3>
-        <p>Reforçada, disponível nas cores azul e preta.</p>
-        <table>
-            <thead>
-                <tr>
-                    <th>Quantidade</th>
-                    <th>Preço</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1 unidade</td>
-                    <td>R$20</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    <div class="product-card">
-        <h3><span class="emoji">📜</span> Seda Raw Organic</h3>
-        <p>King Size Slim.</p>
-        <table>
-            <thead>
-                <tr>
-                    <th>Quantidade</th>
-                    <th>Preço</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1 unidade</td>
-                    <td>R$10</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+        // Classe para criar partículas
+        class Particle {
+            constructor(x, y, size, speedX, speedY, color) {
+                this.x = x;
+                this.y = y;
+                this.size = size;
+                this.speedX = speedX;
+                this.speedY = speedY;
+                this.color = color;
+            }
 
-    <div class="footer">
-        <p>⚠️ Não compartilhe este contato! Indique e nós chamamos a pessoa! 🙏</p>
-        <p>✅ Obrigado pela preferência! Boas compras! 🌟</p>
-    </div>
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
+                ctx.fillStyle = this.color;
+                ctx.fill();
+            }
+
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+
+                // Faz as partículas "rebaterem" nas bordas
+                if (this.x + this.size > canvas.width || this.x - this.size < 0) {
+                    this.speedX *= -1;
+                }
+                if (this.y + this.size > canvas.height || this.y - this.size < 0) {
+                    this.speedY *= -1;
+                }
+
+                this.draw();
+            }
+        }
+
+        // Array para armazenar as partículas
+        let particlesArray = [];
+
+        // Função para criar partículas aleatórias
+        function createParticles() {
+            for (let i = 0; i < 100; i++) {
+                const size = Math.random() * 3 + 1;
+                const x = Math.random() * canvas.width;
+                const y = Math.random() * canvas.height;
+                const speedX = (Math.random() - 0.5) * 2;
+                const speedY = (Math.random() - 0.5) * 2;
+                const color = `rgba(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255}, 0.8)`;
+                particlesArray.push(new Particle(x, y, size, speedX, speedY, color));
+            }
+        }
+
+        // Função para animar o canvas
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            // Cria um gradiente de fundo
+            const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+            gradient.addColorStop(0, '#1e3c72');
+            gradient.addColorStop(1, '#2a5298');
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            // Atualiza e desenha as partículas
+            particlesArray.forEach(particle => particle.update());
+
+            requestAnimationFrame(animate);
+        }
+
+        // Inicializa o canvas
+        function init() {
+            particlesArray = [];
+            createParticles();
+            animate();
+        }
+
+        init();
+    </script>
 </body>
 </html>
-
-
-
-							<script>
-                            	
-							</script>
-                        </body>
-                        </html>
-                    
